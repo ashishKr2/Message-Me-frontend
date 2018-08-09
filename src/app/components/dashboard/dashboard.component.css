@@ -1,0 +1,14 @@
+.container{
+    margin-top:80px;
+    
+    border:10px solid #1e2f2f;
+}
+
+.profile{
+    padding-top:44px;
+}
+
+.col-lg-4{
+    padding-top:44px;
+    padding-bottom:200px;
+}

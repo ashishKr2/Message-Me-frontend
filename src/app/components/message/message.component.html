@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="background">
+    <div class="imgcontainer">
+      <img src="../assets/images/icon.jpg" alt="Message me-icon" class="avatar">
+    </div>
+    <form  (submit)="MessageSubmit()" >
+    <div class="form-group" >
+    
+      <textarea class="form-control" type="text" placeholder="Enter Message"  [(ngModel)]="msg"  name="msg" required></textarea>
+     </div>
+
+    <input type="submit" class="btn btn-primary" value="Send"  style="margin:20px 220px;">
+  
+  </form> 
+  </div>
+  
+  </div>

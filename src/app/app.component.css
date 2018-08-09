@@ -1,0 +1,96 @@
+
+.container{
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+    margin-top:80px;
+  }
+  .abc{
+    margin-top:80px;
+  }
+  
+  @font-face{
+    font-family:'Bulls';
+    src:url("../assets/fonts/TwoPeaks.ttf");
+  }
+  
+  .navbar{
+    padding:5px;
+    font-size:20px;
+    background-color:#1e2f2f;
+  
+  }
+  
+  .nav-item{
+    margin-left:30px;
+  }
+  
+  .heading{
+    margin:10px 560px;
+   
+  }
+  
+  
+  .navbar-brand{
+    margin-left:30px;
+    font-size:30px;
+    letter-spacing: 3px;
+    font-family:"Bulls";
+    
+  }
+  
+  .navbar-brand:hover{
+    color:white !important  ;
+  }
+  
+  .navbar-collapse{
+    background-color:#1e2f2f;
+  }
+  
+  .login{
+    display:inherit;
+    margin-left:180px;
+  }
+  .col-md-2 a:hover{
+    text-decoration: none;
+  }
+  
+  .form-control{
+    width:300px;
+    margin:0px auto;
+  }
+  
+  .col-md-4{
+    margin-top:20px;
+  }
+  
+  
+    nav a:hover {
+      color:brown;
+      
+    }
+  
+    .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active,
+     .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link
+    { color:yellow;
+    }
+   
+  
+    .dropdown-menu{
+      left:-93px;
+    }
+  
+    @media(max-width:768px){
+      .img-responsive{
+        margin-left:20px!important;
+      }
+  
+      .navbar-brand{
+        margin-left:10px !important;
+      }
+    }
+  
+   
+    .img-responsive{
+      margin-left:50px;
+    }
