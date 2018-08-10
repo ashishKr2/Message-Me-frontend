@@ -52,6 +52,7 @@ private router :Router
       this.flashmessages.show('Now you are loggedIn',{cssClass:'alert-success',timeout:3000});
       this.authservice.getProfile().subscribe(profile=>{
         this.user=profile.user;
+        
       this.router.navigate(['/dashboard']);
       },
       err=>{

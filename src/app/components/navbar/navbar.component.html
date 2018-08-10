@@ -27,7 +27,7 @@
                 
                 <li class="nav-item" *ngIf="authservice.loggedIn()">
                   <div>
-                  <a class="nav-link" routerLink="/dashboard" id="nav-login" style="color:black">Profile</a>
+                  <a class="nav-link" [routerLink]="['/dashboard']" id="nav-login" style="color:black">Profile</a>
                   </div>
                 </li>
                 <li class="nav-item" *ngIf="authservice.loggedIn()">

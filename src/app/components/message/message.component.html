@@ -3,7 +3,7 @@
     <div class="imgcontainer">
       <img src="../assets/images/icon.jpg" alt="Message me-icon" class="avatar">
     </div>
-    <form  (submit)="MessageSubmit()" >
+    <form  (submit)="MessageSubmit()" (keydown.enter)="MessageSubmit()" >
     <div class="form-group" >
     
       <textarea class="form-control" type="text" placeholder="Enter Message"  [(ngModel)]="msg"  name="msg" required></textarea>
@@ -13,5 +13,5 @@
   
   </form> 
   </div>
-  
   </div>
+  

@@ -12,3 +12,11 @@
     padding-top:44px;
     padding-bottom:200px;
 }
+.bodr{
+    border: solid rgb(142, 59, 180);
+    border-radius: 7%;
+
+}
+.btn{
+    border-radius: 50%
+}
