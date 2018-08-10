@@ -41,16 +41,12 @@ export class MessageComponent implements OnInit {
       this.messages=messages;
     
       for(let i=0;i<messages.length;i++){
-        
-      console.log("...........",messages[i].username);
       if(messages[i].username==this.uid){
          this.count++;
       }
-      
       }
-      console.log("................",this.count);
         if(this.count==0){
-        this.flashmessages.show('This Username not exixt',{cssClass:'alert-danger',timeout:3000})
+        this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
         this.router.navigate(['/home']);
         }
     }  
