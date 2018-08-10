@@ -36,21 +36,21 @@ export class MessageComponent implements OnInit {
 
     this.uid = this.route.snapshot.params['userId'];
 
-    // this.authService.getMessage()
-    // .subscribe(messages=>{
-    //   this.messages=messages;
+    this.authService.getMessage()
+    .subscribe(messages=>{
+      this.messages=messages;
 
-    //   for(let i=0;i<messages.length;i++){
-    //   if(messages[i].username==this.uid){
-    //      this.count++;
-    //   }
-    //   }
-    //     if(this.count==0){
-    //     this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
-    //     this.router.navigate(['/home']);
-    //     }
-    // }  
-    // );
+      for(let i=0;i<messages.length;i++){
+      if(messages[i].username==this.uid){
+         this.count++;
+      }
+      }
+        if(this.count==0){
+        this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
+        this.router.navigate(['/home']);
+        }
+    }  
+    );
    
     
   }
