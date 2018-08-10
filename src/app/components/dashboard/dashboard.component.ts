@@ -12,7 +12,7 @@ import { log } from 'util';
 })
 export class DashboardComponent implements OnInit {
   user:Object;
-  user1="fff"
+  user1:String;
   messages:Message[]=[];
   message:Message;
   msg:string;
