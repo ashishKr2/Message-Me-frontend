@@ -5,7 +5,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 // import { Router } from '../../../../node_modules/@angular/router';
 import { Message } from './message';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ThrowStmt } from '../../../../node_modules/@angular/compiler';
 
 @Component({
@@ -21,37 +21,38 @@ export class MessageComponent implements OnInit {
   username: string;
   // myform: FormGroup;
   // mesag:FormControl;
-   uid: string;
-  user:Object;
-  user1:string;
-  flag:boolean=false;
-  count:number=0;
+  uid: string;
+  user: Object;
+  user1: string;
+  flag: boolean = false;
+  count: number = 0;
   constructor(private authService: AuthService,
-     private flashmessages: FlashMessagesService,
-     private router:Router,
-     private route: ActivatedRoute) { }
+    private flashmessages: FlashMessagesService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     // this.mesag = new FormControl('', Validators.required);
-    
-      this.uid = this.route.snapshot.params['userId']; 
 
-    this.authService.getMessage()
-    .subscribe(messages=>{
-      this.messages=messages;
+    this.uid = this.route.snapshot.params['userId'];
+
+    // this.authService.getMessage()
+    // .subscribe(messages=>{
+    //   this.messages=messages;
+
+    //   for(let i=0;i<messages.length;i++){
+    //   if(messages[i].username==this.uid){
+    //      this.count++;
+    //   }
+    //   }
+    //     if(this.count==0){
+    //     this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
+    //     this.router.navigate(['/home']);
+    //     }
+    // }  
+    // );
+   
     
-      for(let i=0;i<messages.length;i++){
-      if(messages[i].username==this.uid){
-         this.count++;
-      }
-      }
-        if(this.count==0){
-        this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
-        this.router.navigate(['/home']);
-        }
-    }  
-    );
-      
   }
 
   MessageSubmit() {
@@ -68,7 +69,8 @@ export class MessageComponent implements OnInit {
         //  this.myform.reset();
 
       });
+
+     
   }
- 
 }
 
