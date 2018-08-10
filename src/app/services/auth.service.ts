@@ -84,6 +84,14 @@ return this.http.post('http://localhost:3000/message',msg,{headers:headers})
  .pipe(map(res=>res.json()));
 }
 
+MessageSub(msg)
+{
+let headers=new Headers();
+headers.append('Content-Type','application/json');
+return this.http.post('http://localhost:3000/mesg',msg,{headers:headers})
+ .pipe(map(res=>res.json()));
+}
+
 // getMessage(username){
 //   return this.http.get('http://localhost:3000/messages/'+username)
 //   .pipe(map(res=>res.json()));
@@ -92,6 +100,8 @@ getMessage(){
   return this.http.get('http://localhost:3000/messages')
   .pipe(map(res=>res.json()));
 }
+
+
 deleteMessage(id){
   return this.http.delete('http://localhost:3000/message/'+id)
   .pipe(map(res=>res.json()));

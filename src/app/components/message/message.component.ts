@@ -35,23 +35,20 @@ export class MessageComponent implements OnInit {
     // this.mesag = new FormControl('', Validators.required);
 
     this.uid = this.route.snapshot.params['userId'];
+   const ms={
+     username:this.uid
+   }
+   this.authService.MessageSub(ms)
+   .subscribe(message=>{
+     if(message.success){
+      this.flashmessages.show('User found', { cssClass: 'alert-success', timeout: 3000 });
+      
+     }else{
 
-    // this.authService.getMessage()
-    // .subscribe(messages=>{
-    //   this.messages=messages;
-
-    //   for(let i=0;i<messages.length;i++){
-    //   if(messages[i].username==this.uid){
-    //      this.count++;
-    //   }
-    //   }
-    //     if(this.count==0){
-    //     this.flashmessages.show('Sorry... This username does not exixt !',{cssClass:'alert-danger',timeout:3000})
-    //     this.router.navigate(['/home']);
-    //     }
-    // }  
-    // );
-
+     this.flashmessages.show('Sorry...... User not found !', { cssClass: 'alert-danger', timeout: 3000 });
+      this.router.navigate(['/home']);
+     }
+   })
   }
 
   MessageSubmit() {
@@ -61,13 +58,18 @@ export class MessageComponent implements OnInit {
     }
     this.authService.MessageSubmit(newMsg)
       .subscribe(message => {
-        this.messages.push(message);
-
-        this.flashmessages.show('Successfully sent message', { cssClass: 'alert-success', timeout: 3000 });
-
+          this.messages.push(message);
+          this.flashmessages.show('Successfully sent message', { cssClass: 'alert-success', timeout: 3000 });
+      
+          console.log(message);
+          
+        }
+        
+      
+            
         //  this.myform.reset();
 
-      });
+      );
 
      
   }
