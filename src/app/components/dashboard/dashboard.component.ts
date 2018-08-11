@@ -54,20 +54,7 @@ export class DashboardComponent implements OnInit {
         console.log(err);
         return false;
       });
-
-    //  ************ getting message
-    // this.authservice.getMessage()
-    // .subscribe(messages=>{
-    //   for(let i=0;i<messages.length;i++){
-    //     console.log("Username-----", this.user1)
-    //   if( this.user1==messages[i].username)
-    //   {
-    //   this.messages = messages[i].msg;
-    // console.log("hello",messages)
-    // }}
-
-
-    // });      
+     
   }
   deleteMessage(id: any) {
     var messages = this.messages;
@@ -88,7 +75,7 @@ export class DashboardComponent implements OnInit {
     window.location.reload();
   }
 
-  copy() {
+  link() {
     this.y = window.location.origin + "/" + this.user1;
     // // ngCopy("copy this text to clipboard ...");
     // this.toastr.info('Copied to Clipboard');
