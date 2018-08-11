@@ -54,27 +54,36 @@ export class SignupComponent implements OnInit {
     }
     var phone_length = this.myForm.value.contact_no.toString().length;
     var age_length=this.myForm.value.age;
+    var password_length=this.myForm.value.password.toString().length;
     if (!this.validateservice.validateRegister(newUser)) {
-      this.flashmessages.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 3000 });
+      this.flashmessages.show('Please fill in all fields', { cssClass: 'alert-danger', timeout: 5000 });
       console.log('please fill in all fields');
       return false;
     }
     if(!this.validateservice.validateEmail(newUser.email))
     {
-      this.flashmessages.show('Please fill the valid email ',{cssClass:'alert-danger',timeout:3000});
+      this.flashmessages.show('Please fill the valid email ',{cssClass:'alert-danger',timeout:5000});
       return false;
     }
+    if(!this.validateservice.validatePassword(newUser.password))
+    {
+      this.flashmessages.show(' Password should be [8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character] '
+      ,{cssClass:'alert-danger',timeout:5000});
+      return false;
+    }
+
     if(phone_length!=10){
-      this.flashmessages.show('Please fill the valid Contact no. ',{cssClass:'alert-danger',timeout:3000});
+      this.flashmessages.show('Please fill the valid Contact no. ',{cssClass:'alert-danger',timeout:5000});
       return false;
     }
-    if(age_length<15 || age_length>85){
-      this.flashmessages.show('Please fill the Age between 15 and 85. ',{cssClass:'alert-danger',timeout:3000});
+  
+    if(age_length<10 || age_length>108){
+      this.flashmessages.show('Please fill the Age between 15 and 85. ',{cssClass:'alert-danger',timeout:5000});
       return false;
     }
     if(this.myForm.controls.password.value!=this.myForm.controls.Cnfpassword.value)
      {
-      this.flashmessages.show('Password not matched',{cssClass:'alert-danger',timeout:3000});
+      this.flashmessages.show('Password not matched',{cssClass:'alert-danger',timeout:5000});
       console.log('!Invalid password');
       return false;
       
@@ -89,7 +98,7 @@ export class SignupComponent implements OnInit {
      }
      else
      {
-       this.flashmessages.show('Something went wrong',{cssClass:'alert-danger',timeout:3000});
+       this.flashmessages.show('Something went wrong -> Username and Email should be unique',{cssClass:'alert-danger',timeout:5000});
        this.router.navigate(['/signup']);
      }
       });

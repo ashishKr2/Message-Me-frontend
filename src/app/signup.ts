@@ -6,6 +6,7 @@ export class Signup{
    age:Number;
    gender:string;
    password:string;
+   username:string;
 } 
 
 
