@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   // { path: 'message', component: MessageComponent },
   { path: ':userId', component: MessageComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full'}
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 @NgModule({
   imports: [

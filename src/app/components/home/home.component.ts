@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Router , NavigationEnd} from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +8,10 @@ import {Router , NavigationEnd} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit() {
+
   }
 
 }

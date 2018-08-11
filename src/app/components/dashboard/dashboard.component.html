@@ -1,70 +1,74 @@
 <div class="container">
-  <div class="row my-2">
-      <div class="col-lg-8 order-lg-2">
-          <ul class="nav nav-tabs">
-              <li class="nav-item">
-                  <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
-              </li>
-              <li class="nav-item">
-                  <a href="" data-target="#message" data-toggle="tab" class="nav-link">Message</a>
-              </li>
-          </ul>
-          <div class="tab-content py-4">
-              <div class="tab-pane active" id="profile">
-                  <h4 class="mb-3" style="text-transform: uppercase">{{user?.name}}</h4>
-                  <div class="row">
-                      <div class="col-md-6">
-                            <h6>Share below link to your friend :-</h6>
-                            <p>
-                                http://localhost:4200/{{user?.username}}
-                            </p> 
-                        <h6>UserName</h6>
-                          <p>
-                              {{user?.username}}
-                          </p> 
-                        <h6>E-mail</h6>
-                          <p>
-                              {{user?.email}}
-                          </p>
-                          
-                          <h6>Age</h6>
-                          <p>
-                            {{user?.age}}
-                          </p>
-                          <h6>Contact no.</h6>
-                          <p>
-                              {{user?.contact_no}}
-                          </p>
-                      </div>
-                      
-                      
-                  </div>
-                  <!--/row-->
-              </div>
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#message" data-toggle="tab" class="nav-link">Message</a>
+                </li>
+                <li>
+                    <a (click)="refresh()" data-toggle="tab" style="cursor: pointer;" class="nav-link">Refresh</a>
+                </li>
 
-              <div class="tab-pane" id="message">
-                  <form role="form">
-                    
-                        <div class="form-group row" *ngFor=" let message of messages ;let i=index">
-                                <label class="col-lg-3 col-form-label form-control-label" >Message {{i+1}}</label>
-                                <div class="col-lg-6 bodr">        
-                                    {{message.msg}}
-                                 </div> 
-                                 <div class="col-lg-1 btn" >
-                                        <input type="button" (click)="deleteMessage(message._id)" value="X" class="btn btn-danger">
-                                </div>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h4 class="mb-3" style="text-transform: uppercase">{{user?.name}}</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Share below link to your friend :-</h6>
+                            <p style="cursor: pointer;">
+                                <a style="color: blue" (click)="copy()"> {{x}}/{{user?.username}} </a>
+
+
+                                <h6>UserName</h6>
+                                <p>
+                                    {{user?.username}}
+                                </p>
+                                <h6>E-mail</h6>
+                                <p>
+                                    {{user?.email}}
+                                </p>
+
+                                <h6>Age</h6>
+                                <p>
+                                    {{user?.age}}
+                                </p>
+                                <h6>Contact no.</h6>
+                                <p>
+                                    {{user?.contact_no}}
+                                </p>
                         </div>
 
-                  </form>
 
-              </div>
-            
-          </div>
-      </div>
-      <div class="col-lg-4 profile text-center">
-          <img src="../../../assets/images/icon.jpg" class="mx-auto rounded-circle d-block" alt="avatar"
-          width="224px;" height="210px;">
-          
-      </div>
-  </div>
+                    </div>
+                    <!--/row-->
+                </div>
+
+                <div class="tab-pane" id="message">
+                    <form role="form">
+
+                        <div class="form-group row" *ngFor=" let message of messages ;let i=index">
+                            <label class="col-lg-3 col-form-label form-control-label">Message {{i+1}}</label>
+                            <div class="col-lg-6 bodr">
+                                {{message.msg}}
+                            </div>
+                            <div class="col-lg-1 btn">
+                                <input type="button" (click)="deleteMessage(message._id)" value="X" class="btn btn-danger">
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-4 profile text-center">
+            <img src="../../../assets/images/icon.jpg" class="mx-auto rounded-circle d-block" alt="avatar" width="224px;" height="210px;">
+
+        </div>
+    </div>
 </div>

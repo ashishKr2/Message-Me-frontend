@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { ValidateService } from '../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '../../../../node_modules/@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(private authservice: AuthService,
     private validateservice: ValidateService,
     private flashmessages: FlashMessagesService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit() {
@@ -59,7 +60,7 @@ export class LoginComponent implements OnInit {
           });
       }
       else {
-        this.flashmessages.show('Something wrong', { cssClass: 'alert-danger', timeout: 3000 });
+        this.toastr.info('Check again username or password');
         this.router.navigate(['/login']);
       }
     });
